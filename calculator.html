@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+<table class="calcu">
+<tr> 
+            <td colspan="3"> 
+                <input type="text" id="result"> 
+            </td> 
+            <td><input type="button" value="c"onclick="clear1()"></td> 
+     </tr> 	
+ <tr> 
+            <td><input type="button" value="1"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="2"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="3"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="/"onclick="calcu(this.value)"></td> 
+     </tr> 
+<tr>
+	   <td><input type="button" value="4"onclick="calcu(this.value)"></td>
+       <td><input type="button" value="5"onclick="calcu(this.value)"></td> 
+       <td><input type="button" value="6"onclick="calcu(this.value)"></td>
+       <td><input type="button" value="*"onclick="calcu(this.value)"></td>
+      </tr>
+ 
+      <tr> 
+            <td><input type="button" value="7"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="8"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="9"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="-"onclick="calcu(this.value)"></td> 
+      </tr> 
+<tr> 
+            <td><input type="button" value="0"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="."onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="="onclick="total()"></td> 
+            <td><input type="button" value="+"onclick="calcu(this.value)"></td> 
+  </tr>
+
+   <tr> 
+            <td><input type="button" value="&sqrt"onclick="root()"></td> 
+            <td><input type="button" value="%"onclick="calcu(this.value)"></td> 
+            <td><input type="button" value="00"onclick="total()"></td> 
+            <td><input type="button" value="$"onclick="calcu(this.value)"></td> 
+  </tr> 
+
+</table>
+</body>
+</html>
+
+<style type="text/css">
+
+ .calcu{border:2px solid black ;
+        margin-top: 50px;
+        margin-left: 100px;}
+
+  input[type="button"]{
+  	background-color: green;
+  	color:white;
+  	font-size: 25px;
+  	font-weight: bold;
+  	width: 100%;
+  	padding: 18px 35px;
+  	border-radius: 5px;
+   }	
+    
+    input[type="text"]{
+  	width: 95%;
+  	height: 52px;
+  	font-weight: bold;
+  	border-radius:6px;
+  	padding:4px ;
+  	font-size: 22px;
+  }
+
+</style>
+
+<script type="text/javascript">
+function calcu(v){
+    result1= document.getElementById('result')
+	if(result1.value==0){
+		result1.value=v		
+	}
+    else{
+	result1.value+=v
+    }
+   }	
+function total(){
+  result1= document.getElementById('result')
+  result1.value=eval(result1.value)
+}
+function clear1(){
+result1= document.getElementById('result')
+result1.value=0
+}
+function root(){
+ result1=document.getElementById('result')
+ result1.value=result1.value*result1.value
+}
+</script>
